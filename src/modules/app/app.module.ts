@@ -3,7 +3,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from 'src/user/users.module';
+import { UsersModule } from 'src/modules/user/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config/dist';
 import { SequelizeModule } from '@nestjs/sequelize';
 import configurations from 'src/configurations';
