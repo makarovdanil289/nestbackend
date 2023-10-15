@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -10,6 +9,7 @@ import configurations from 'src/configurations';
 import { User } from '../user/models/user.model';
 import { AuthModule } from '../auth/auth.module';
 import { TokenModule } from '../token/token.module';
+import { WatchlistModule } from '../watchlist/watchlist.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -33,7 +33,8 @@ import { TokenModule } from '../token/token.module';
   }),
   UsersModule,
   AuthModule,
-  TokenModule
+  TokenModule,
+  WatchlistModule
 ],
   controllers: [AppController],
   providers: [AppService],

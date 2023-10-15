@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './models/user.model';
 import * as bcrypt from 'bcrypt';
@@ -41,7 +41,7 @@ export class UsersService {
         return dto
     }
 
-    async deleteUser(email: string) {
+    async deleteUser(email: string): Promise <boolean> {
         await this.userRepository.destroy({where: {email}})
         return true
     }
