@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { CreateUserDTO } from '../user/dto';
@@ -22,7 +21,7 @@ export class AuthController {
     @ApiTags('API')
     @ApiResponse({status: 200, type: AuthUserResponse})
     @Post('login')
-    login(@Body() dto: UserLoginDTO): Promise<AuthUserResponse> {
+    login(@Body() dto: UserLoginDTO): Promise<any> {
         return this.authService.loginUser(dto)
     }
 
